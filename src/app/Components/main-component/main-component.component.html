@@ -1,0 +1,14 @@
+<div class="card ">
+    <div class="row justify-content-md-center">
+
+
+        <div class="text-center mb-2">
+            <select class="p-2" [(ngModel)]="cityName" (change)="getDataByCityName()">
+                <option *ngFor="let city of citysArr" [value]="city">{{city}}</option>
+            </select>
+        </div>
+        <ng-container *ngIf="show">
+            <app-city-component [weatherData]="weatherData"></app-city-component>
+        </ng-container>
+    </div>
+</div>

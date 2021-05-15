@@ -1,0 +1,27 @@
+<div class="card ">
+    <div class="col"><button class="btn btn-link" (click)="navBack()"><i class="fas fa-angle-left"></i> Back</button>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col">
+            <h4>5 days weather report of {{city}}</h4>
+            <hr>
+
+        </div>
+        <div class="row text-center" *ngFor="let data of cityDetailList">
+            <div class=" my-1 py-2 text-underline">
+                <h6><u>{{data.date}}</u></h6>
+            </div>
+            <div class="col-6 my-1 py-2">
+                <span><i class="fas fa-temperature-low"></i>&nbsp;{{data.temp_max}}° / {{data.temp_min}}°</span>
+
+            </div>
+
+            <div class="col-6 my-1 py-2">
+                <span><i class="fas fa-water"></i>&nbsp;{{data.pressure}} hPa</span>
+
+            </div>
+        </div>
+
+    </div>
+</div>

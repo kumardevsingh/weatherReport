@@ -1,0 +1,44 @@
+<ng-container>
+  <div>
+    <div *ngIf="weatherData.isDay" class="weatherWidgetRow">
+      <i class="fas fa-3x fa-sun sun"></i>
+    </div>
+    <div *ngIf="!weatherData.isDay" class="weatherWidgetRow">
+      <i class="fas fa-3x fa-moon moon"></i>
+    </div>
+    <div class="weatherWidgetRow cloudDiv" *ngIf="weatherDataMod.cloudType=='Clouds'">
+      <i class="fas fa-cloud fa-3x cloud"></i>
+      
+    </div>
+    <div class="weatherWidgetRow cloudDiv"  *ngIf="weatherDataMod.cloudType=='Rain'">
+      <i class="fas fa-cloud-rain fa-3x cloud"></i>
+    </div>
+  </div>
+  <div
+    class="row my-3 mx-2 py-2 custom_row"
+    (click)="gotoCityDetails(weatherDataMod.name)"
+  >
+    <div class="col-6 col-lg-3 col-sm-6">
+      <span><i class="fas fa-city"></i>&nbsp;{{ weatherDataMod.name }}</span>
+    </div>
+
+    <div class="col-6 col-lg-3 col-sm-6">
+      <span
+        ><i class="fas fa-temperature-low"></i>&nbsp;{{
+          weatherDataMod.temp_min
+        }}° / {{ weatherDataMod.temp_max }}°</span
+      >
+    </div>
+
+    <div class="col-6 col-lg-3 col-sm-6">
+      <span
+        ><i class="fas fa-sun"></i>&nbsp;{{ weatherDataMod.sunrise_time }}</span
+      >
+    </div>
+    <div class="col-6 col-lg-3 col-sm-6">
+      <span
+        ><i class="far fa-sun"></i>&nbsp;{{ weatherDataMod.sunset_time }}
+      </span>
+    </div>
+  </div>
+</ng-container>
